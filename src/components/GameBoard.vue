@@ -4,6 +4,7 @@
     :style="{
       gridTemplateColumns: gridTemplateColumns,
       gridTemplateRows: gridTemplateRows,
+      fontSize: fontSize,
     }"
   >
     <template v-for="row in gridSize">
@@ -20,7 +21,8 @@
 
 <script>
 import Cell from "./Cell.vue";
-const gridSize = 6;
+
+const gridSize = 5;
 export default {
   data() {
     return {
@@ -35,10 +37,13 @@ export default {
   },
   computed: {
     gridTemplateColumns() {
-      return `repeat(${this.gridSize},${80 / this.gridSize}vmin)`;
+      return `repeat(${this.gridSize},${75 / this.gridSize}vmin)`;
     },
     gridTemplateRows() {
-      return `repeat(${this.gridSize},${80 / this.gridSize}vmin)`;
+      return `repeat(${this.gridSize},${75 / this.gridSize}vmin)`;
+    },
+    fontSize() {
+      return `${0.4 * (75 / this.gridSize)}vmin`;
     },
   },
   created() {
