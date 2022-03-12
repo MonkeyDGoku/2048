@@ -1,0 +1,6 @@
+:root {
+  --bg-color: #ccc;
+  --grid-size: 4;
+  --cell-size: 20vmin;
+  --cell-gap: 2vmin;
+}
