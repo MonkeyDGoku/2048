@@ -22,7 +22,7 @@
 <script>
 import Cell from "./Cell.vue";
 
-const gridSize = 5;
+const gridSize = 6;
 export default {
   data() {
     return {
@@ -186,13 +186,11 @@ export default {
       tempMatrix = this.transpose(tempMatrix);
       this.matrix = tempMatrix;
       if (this.checkWin(this.matrix)) {
-        debugger;
         this.matrix = this.createMatrix("🏆");
       } else {
         if (this.checkEmptyCell(this.matrix)) {
           this.matrix = this.randomGenerator(this.matrix);
         } else {
-          debugger;
           this.matrix = this.createMatrix("😞");
         }
       }
@@ -221,11 +219,15 @@ export default {
 
       tempMatrix = this.transpose(tempMatrix);
       this.matrix = tempMatrix;
-      if (this.checkEmptyCell(this.matrix)) {
-        this.matrix = this.randomGenerator(this.matrix);
+      if (this.checkWin(this.matrix)) {
+        this.matrix = this.createMatrix("🏆");
       } else {
-        debugger;
-        this.matrix = this.createMatrix("😞");
+        if (this.checkEmptyCell(this.matrix)) {
+          this.matrix = this.randomGenerator(this.matrix);
+        } else {
+          debugger;
+          this.matrix = this.createMatrix("😞");
+        }
       }
     },
     onKeyPressLeft() {
@@ -251,11 +253,15 @@ export default {
       }
 
       this.matrix = tempMatrix;
-      if (this.checkEmptyCell(this.matrix)) {
-        this.matrix = this.randomGenerator(this.matrix);
+      if (this.checkWin(this.matrix)) {
+        this.matrix = this.createMatrix("🏆");
       } else {
-        debugger;
-        this.matrix = this.createMatrix("😞");
+        if (this.checkEmptyCell(this.matrix)) {
+          this.matrix = this.randomGenerator(this.matrix);
+        } else {
+          debugger;
+          this.matrix = this.createMatrix("😞");
+        }
       }
     },
     onKeyPressRight() {
@@ -281,11 +287,15 @@ export default {
       }
 
       this.matrix = tempMatrix;
-      if (this.checkEmptyCell(this.matrix)) {
-        this.matrix = this.randomGenerator(this.matrix);
+      if (this.checkWin(this.matrix)) {
+        this.matrix = this.createMatrix("🏆");
       } else {
-        debugger;
-        this.matrix = this.createMatrix("😞");
+        if (this.checkEmptyCell(this.matrix)) {
+          this.matrix = this.randomGenerator(this.matrix);
+        } else {
+          debugger;
+          this.matrix = this.createMatrix("😞");
+        }
       }
     },
   },

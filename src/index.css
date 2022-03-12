@@ -2,7 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: "Arial";
+  font-weight: bold;
 }
 
 body {
